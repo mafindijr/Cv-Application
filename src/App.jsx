@@ -1,5 +1,5 @@
 
-import EduExperience from './components/EduExperience.jsx';
+import EduExperience from './components/edu-experience.jsx';
 function App() {
 
   return (
