@@ -17,4 +17,46 @@ export default function EduExperience () {
     function handleDateChange(e) {
         setDateOfStudy(e.target.value);
     }
+
+    return (
+        <div className="edu-experience">
+
+            <h1>Education Experience</h1>
+
+            <label htmlFor="school">
+                School {" "}
+                <input type='text' id="school"
+                 value={school}
+                  onChange={handleSchoolChange}
+
+                 />
+
+            </label>
+
+
+            <label htmlFor='levelOfStudy'>
+
+                    Level Of Study {" "}
+
+                    <input type="text"
+
+                        id="levelOfStudy"
+                        value={leveOfStudy}
+                        onChange={handleLevelChange}
+                    />
+            </label>
+
+            <label htmlFor='dateOfStudy'>
+                Date Of Study {" "}
+
+                <input type="text"
+                    id="dateOfStudy"
+                    value={dateOfStudy}
+                    onChange={handleDateChange}
+                />  
+            </label>
+
+
+        </div>
+    );
 }
