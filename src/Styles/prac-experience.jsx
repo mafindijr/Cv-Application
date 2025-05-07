@@ -2,21 +2,16 @@ import {useState} from 'react';
 
 export default function PracExperience () {
 
-    const [company, setCompany] = useState(" ");
-    const [jobTitle, setJobTitle] = useState(" ");
-    const [dateOfWork, setDateOfWork] = useState(" ");
+    const [PExperence, setPExperience] = useState({name: "", jobTitle: "", description: "", dateOfWork: ""});
 
-    function handleCompanyChange(e) {
-        setCompany(e.target.value);
+    function handleChange(e) {
+        const { name, value } = e.target;
+        setPExperience();
+        const updatedInfo = { ...PExperence, [name]: value };
+        setPExperience(updatedInfo); //to the parent
     }
 
-    function handleJobTitleChange(e) {
-        setJobTitle(e.target.value);
-    }
-
-    function handleDateOfWorkChange(e) {
-        setDateOfWork(e.target.value);
-    }
+    
 
     return (
         <div className="prac-experience">

@@ -16,28 +16,45 @@ export default function GeneralInfor({ onChange }) {
         <div className="general-info">
 
             <h1>General Information</h1>
+            <label htmlFor="name">
 
-            <input
-                type="text"
-                name="name"
-                placeholder="Name"
-                value={info.name}
-                onChange={handleChange}
-            />
-            <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                value={info.email}
-                onChange={handleChange}
-            />
-            <input
-                type="tel"
-                name="phone"
-                placeholder="Phone"
-                value={info.phone}
-                onChange={handleChange}
-            />
+                Name {" "}
+
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Name"
+                    value={info.name}
+                    onChange={handleChange}
+                />
+
+            </label>    
+
+            <label htmlFor="email">
+                Email {" "}
+
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    value={info.email}
+                    onChange={handleChange}
+                />
+                </label>
+            <label htmlFor="phone">
+
+                Phone {" "}
+
+                <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone"
+                    value={info.phone}
+                    onChange={handleChange}
+                />
+
+                </label>
+         
         </div>
     );
 }
