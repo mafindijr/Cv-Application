@@ -1,63 +1,43 @@
 import { useState } from "react";
 
 
-export default function GeneralInfor() {
 
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [phone, setPhone] = useState("");
+export default function GeneralInfor({ onChange }) {
+    const [info, setInfo] = useState({ name: "", email: "", phone: "" });
 
-
-    function handleNameChange(e) {
-        setName(e.target.value);
-    }
-
-    function handleEmailChange(e) {
-        setEmail(e.target.value);
-    }
-
-    function handlePhoneChange(e) {
-        setPhone(e.target.value);
-    }
-
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        const updatedInfo = { ...info, [name]: value };
+        setInfo(updatedInfo);
+        onChange(updatedInfo); // Send data to the parent
+    };
 
     return (
         <div className="general-info">
 
             <h1>General Information</h1>
 
-            <label htmlFor="name">
-                Name {" "}
-                <input type='text' id="name"
-                    value={name}
-                    onChange={handleNameChange}
-                />
-            </label>
-
-
-            <label htmlFor='email'>
-                Email {" "}
-                <input type="text"
-                    id="email"
-                    value={email}
-                    onChange={handleEmailChange}
-                />
-            </label>
-
-
-            <label htmlFor='phone'>
-                Phone {" "}
-                <input type="text"
-                    id="phone"
-                    value={phone}
-                    onChange={handlePhoneChange}
-                />
-
-            </label>
-
-
+            <input
+                type="text"
+                name="name"
+                placeholder="Name"
+                value={info.name}
+                onChange={handleChange}
+            />
+            <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={info.email}
+                onChange={handleChange}
+            />
+            <input
+                type="tel"
+                name="phone"
+                placeholder="Phone"
+                value={info.phone}
+                onChange={handleChange}
+            />
         </div>
     );
-
-    
 }

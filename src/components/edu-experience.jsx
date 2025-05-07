@@ -33,6 +33,8 @@ export default function EduExperience () {
 
             </label>
 
+            <p>School: {school}</p>
+
 
             <label htmlFor='levelOfStudy'>
 
