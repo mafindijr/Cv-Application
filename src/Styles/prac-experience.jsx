@@ -1,19 +1,20 @@
 import {useState} from 'react';
 
-export default function PracExperience () {
+export default function PracExperience ( { onChange } ) {
 
     const [PExperence, setPExperience] = useState({name: "", jobTitle: "", description: "", dateOfWork: ""});
 
     function handleChange(e) {
         const { name, value } = e.target;
-        setPExperience();
         const updatedInfo = { ...PExperence, [name]: value };
-        setPExperience(updatedInfo); //to the parent
+        setPExperience(updatedInfo);
+        onChange(updatedInfo); // to the parent
     }
 
     
 
     return (
+
         <div className="prac-experience">
 
             <h1>Practical Experience</h1>
@@ -21,8 +22,9 @@ export default function PracExperience () {
             <label htmlFor="company">
                 Company {" "}
                 <input type='text' id="company"
-                 value={company}
-                  onChange={handleCompanyChange}
+                    name="name"
+                     value={PExperence.name}
+                    onChange={handleChange}
                  />
             </label>
 
@@ -30,9 +32,20 @@ export default function PracExperience () {
             <label htmlFor='jobTitle'>
                 Job Title {" "}
                 <input type="text"
+                    name="jobTitle"
                     id="jobTitle"
-                    value={jobTitle}
-                    onChange={handleJobTitleChange}
+                    value={PExperence.jobTitle}
+                    onChange={handleChange}
+                />
+            </label>
+
+            <label htmlFor="">
+                Description {" "}
+                <input type="text"
+                    id="description"
+                    name="description"
+                    value={PExperence.description}
+                    onChange={handleChange}
                 />
             </label>
 
@@ -40,9 +53,10 @@ export default function PracExperience () {
             <label htmlFor='dateOfWork'>
                 Date Of Work {" "}
                 <input type="text"
+                    name="dateOfWork"
                     id="dateOfWork"
-                    value={dateOfWork}
-                    onChange={handleDateOfWorkChange}
+                    value={PExperence.dateOfWork}
+                    onChange={handleChange}
                 />  
             </label>
 
