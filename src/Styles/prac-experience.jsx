@@ -20,27 +20,34 @@ export default function PracExperience ( { onChange } ) {
             <h1>Practical Experience</h1>
 
             <label htmlFor="company">
+
                 Company {" "}
+
                 <input type='text' id="company"
                     name="name"
                      value={PExperence.name}
                     onChange={handleChange}
                  />
+
             </label>
 
 
             <label htmlFor='jobTitle'>
+
                 Job Title {" "}
                 <input type="text"
                     name="jobTitle"
                     id="jobTitle"
                     value={PExperence.jobTitle}
                     onChange={handleChange}
+
                 />
             </label>
 
             <label htmlFor="">
+
                 Description {" "}
+
                 <input type="text"
                     id="description"
                     name="description"
@@ -51,7 +58,9 @@ export default function PracExperience ( { onChange } ) {
 
 
             <label htmlFor='dateOfWork'>
+
                 Date Of Work {" "}
+                
                 <input type="text"
                     name="dateOfWork"
                     id="dateOfWork"
