@@ -1,75 +1,67 @@
-import {useState} from 'react';
+import { useState } from "react";
 
-export default function PracExperience ( { onChange } ) {
-
-    const [pExperence, setPExperience] = useState({name: "", jobTitle: "", description: "", dateOfWork: ""});
+export default function PracExperience({ onChange }) {
+    const [pExperience, setPExperience] = useState({
+        name: "",
+        jobTitle: "",
+        description: "",
+        dateOfWork: "",
+    });
 
     function handleChange(e) {
         const { name, value } = e.target;
-        const updatedInfo = { ...pExperence, [name]: value };
+        const updatedInfo = { ...pExperience, [name]: value };
         setPExperience(updatedInfo);
-        onChange(updatedInfo); // to the parent
+        onChange(updatedInfo); // Send updated data to the parent
     }
 
-    
-
     return (
-
         <div className="prac-experience">
-
             <h1>Practical Experience</h1>
 
             <label htmlFor="company">
-
-                Company {" "}
-
-                <input type='text' id="company"
+                Company{" "}
+                <input
+                    type="text"
+                    id="company"
                     name="name"
-                     value={pExperence.name}
+                    value={pExperience.name}
                     onChange={handleChange}
-                 />
-
-            </label>
-
-
-            <label htmlFor='jobTitle'>
-
-                Job Title {" "}
-                <input type="text"
-                    name="jobTitle"
-                    id="jobTitle"
-                    value={pExperence.jobTitle}
-                    onChange={handleChange}
-
                 />
             </label>
 
-            <label htmlFor="">
+            <label htmlFor="jobTitle">
+                Job Title{" "}
+                <input
+                    type="text"
+                    id="jobTitle"
+                    name="jobTitle"
+                    value={pExperience.jobTitle}
+                    onChange={handleChange}
+                />
+            </label>
 
-                Description {" "}
-
-                <input type="text"
+            <label htmlFor="description">
+                Description{" "}
+                <input
+                    type="text"
                     id="description"
                     name="description"
-                    value={pExperence.description}
+                    value={pExperience.description}
                     onChange={handleChange}
                 />
             </label>
 
-
-            <label htmlFor='dateOfWork'>
-
-                Date Of Work {" "}
-
-                <input type="text"
-                    name="dateOfWork"
+            <label htmlFor="dateOfWork">
+                Date Of Work{" "}
+                <input
+                    type="text"
                     id="dateOfWork"
-                    value={pExperence.dateOfWork}
+                    name="dateOfWork"
+                    value={pExperience.dateOfWork}
                     onChange={handleChange}
-                />  
+                />
             </label>
-
-
         </div>
     );
 }
