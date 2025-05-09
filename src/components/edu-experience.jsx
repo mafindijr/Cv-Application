@@ -17,20 +17,18 @@ export default function EduExperience ( {onChange} ) {
 
             <h1>Education Experience</h1>
 
-            <label htmlFor="shool-name">
+            <label htmlFor="school-name">
 
                 School Name {" "}
 
                 <input
                     type="text"
-                    name="name"
-                    placeholder="name"
+                    name="school"
+                    placeholder="school name"
                     value={schoolInfor.school}
                     onChange={handleSchoolChange}
                 />
             </label>
-
-            <p> {schoolInfor.school} </p>
 
         </div>
     );
