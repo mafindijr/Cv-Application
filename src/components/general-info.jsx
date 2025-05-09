@@ -3,6 +3,7 @@ import { useState } from "react";
 
 
 export default function GeneralInfor({ onChange }) {
+    
     const [info, setInfo] = useState({ name: "", email: "", phone: "" });
 
     const handleChange = (e) => {
