@@ -14,6 +14,9 @@ export default function GeneralInfor({ onChange }) {
     };
 
     return (
+
+        <form action="" onSubmit={(e) => e.preventDefault()}>
+
         <div className="general-info">
 
             <h1>General Information</h1>
@@ -57,5 +60,6 @@ export default function GeneralInfor({ onChange }) {
                 </label>
          
         </div>
+        </form>
     );
 }

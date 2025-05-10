@@ -29,7 +29,9 @@ export default function CV() {
             
             
             <div>
-                <h2>Preview</h2>
+                    <h1>Review</h1>
+
+                <h2>General Information</h2>
                 <p>Name: {generalInfo.name}</p>
                 <p>Email: {generalInfo.email}</p>
                 <p>Phone: {generalInfo.phone}</p>
