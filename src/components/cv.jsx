@@ -1,10 +1,12 @@
 import { useState } from "react";
 import GeneralInfor from "./general-info";
 import EduExperience from "./edu-experience";
+import PracExperience from "./prac-experience"
 
 export default function CV() {
     const [generalInfo, setGeneralInfo] = useState({ name: "", email: "", phone: "" });
     const [eduExperience, setEduExperience] = useState({ school: "", levelOfStudy: "", dateOfStudy: "" });
+    const [pracExperience, setPracExperience] = useState({ compnay: '', jobTitle: '', dateOfWork: '', description: '' });
 
     const handleGeneralInfoChange = (info) => {
         setGeneralInfo(info);
@@ -14,11 +16,16 @@ export default function CV() {
         setEduExperience(info);
     }
 
+    const handlePracExperience = (infor) => {
+        setPracExperience(infor);
+    }
+
     return (
         <div className="cv">
             <h1>CV</h1>
             <GeneralInfor onChange={handleGeneralInfoChange} />
             <EduExperience onChange={handleEduExperienceChange}/>
+            <PracExperience onChange={handlePracExperience} />
             
             
             <div>
@@ -33,6 +40,14 @@ export default function CV() {
                 <p>School: {eduExperience.school}</p>
                 <p>Level of Study: {eduExperience.levelOfStudy}</p>
                 <p>Date of Study: {eduExperience.dateOfStudy}</p>
+            </div>
+
+            <div>
+                <h2>Practical Experience</h2>
+                <p>Compnay name: {pracExperience.compnay}</p>
+                <p>Job title: {pracExperience.jobTitle}</p>
+                <p>Date: {pracExperience.dateOfWork}</p>
+                <p>Job description: {pracExperience.description}</p>
             </div>
             
            
