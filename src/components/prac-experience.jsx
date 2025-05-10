@@ -1,74 +1,65 @@
-import {useState} from 'react';
+import { useState } from 'react';
 
+export default function PracExperience ({ onChange }) {
 
-export default function PracEperience () {
+    const [PracExperience, setPracExperience] = useState({ compnay: '', jobTitle: '', dateOfWork: '', description: '' });
 
-    const [company, setCompany] = useState("");
-    const [jobTitle, setJobTile] = useState("");
-    const [dateOfWork, setDateOfWork] = useState ("");
-    const [description, setDescription] = useState("");
-
-
-    function handleCompanyChange(e) {
-        setCompany(e.target.value);
-    }
-
-    function handleJobTitleChange(e) {
-        setJobTile(e.target.value);
-    }
-
-    function handleDateOfWorkChange(e) {
-        setDateOfWork(e.target.value);
-    }
-
-    function handleDescriptionChange(e) {
-        setDescription(e.target.value);
+    function handleChange (e) {
+        const { name, value } = e.target;
+        const updatedInfo = { ...PracExperience, [name]: value }
+        setPracExperience(updatedInfo);
+        onChange(updatedInfo);
     }
 
     return (
-        <div className="prac-experience">
-
-            <h1>Practical Experience</h1>
+        <div className='prac-experience'>
 
             <label htmlFor="company">
-                Company {" "}
-                <input type='text' id="company"
-                    value={company}
-                    onChange={handleCompanyChange}
+                company name {' '}
+
+                <input type="text"
+                    name='company'
+                    placeholder='company name'
+                    value={PracExperience.compnay}
+                    onChange={handleChange}
+                />
+            </label>
+
+            <label htmlFor="j0b">
+                job title {' '}
+
+                <input type="text"
+                    name='job'
+                    placeholder='job title'
+                    value={PracExperience.jobTitle}
+                    onChange={handleChange}
                 />
             </label>
 
 
-            <label htmlFor='jobTitle'>
-                Job Title {" "}
+            <label htmlFor="date">
+                Date of work {' '}
+
                 <input type="text"
-                    id="jobTitle"
-                    value={jobTitle}
-                    onChange={handleJobTitleChange}
+                    name='date'
+                    placeholder='enter date'
+                    value={PracExperience.dateOfWork}
+                    onChange={handleChange}
                 />
             </label>
 
+            <label htmlFor="description">
+                Description {' '}
 
-            <label htmlFor='dateOfWork'>
-                Date Of Work {" "}
                 <input type="text"
-                    id="dateOfWork"
-                    value={dateOfWork}
-                    onChange={handleDateOfWorkChange}
-                />  
+                    name='description'
+                    placeholder='description'
+                    value={PracExperience.description}
+                    onChange={handleChange}
+                />
             </label>
-
-
-            <label htmlFor='description'>
-                Description {" "}
-                <input type="text"
-                    id="description"
-                    value={description}
-                    onChange={handleDescriptionChange}
-                />  
-            </label>
-
 
         </div>
     );
+
 }
