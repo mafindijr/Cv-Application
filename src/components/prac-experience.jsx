@@ -25,7 +25,7 @@ export default function PracExperience () {
         }
 
         if(name === 'year') {
-            setYear(e.target);
+            setYear(value);
         }
     }
 
