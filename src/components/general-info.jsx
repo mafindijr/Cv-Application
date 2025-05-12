@@ -2,7 +2,7 @@ import { useState } from "react";
 
 
 
-export default function GeneralInfor({name, email, phone}) {
+export default function GeneralInfor() {
     
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
