@@ -33,7 +33,6 @@ export default function EduExperience () {
     const EduData = ({ school, course, date }) => {
         return (
             <div>
-                <h1>Education Experience</h1>
                 <p>{school}</p>
                 <p>{course}</p>
                 <p>{date}</p>
@@ -44,6 +43,8 @@ export default function EduExperience () {
     return (
         <div className="edu-experience">
             <form onSubmit={handleSubmit}>
+
+                <h1>Education Experience</h1>
 
             <label>
                 School Name: {' '}

@@ -49,8 +49,6 @@ const InforData = ({name, email, phone}) => {
     return (
         <div>
 
-        <h1>General Information</h1>
-
         <p>{name}</p>
         <p>{email}</p>
         <p>{phone}</p>
@@ -65,6 +63,8 @@ const InforData = ({name, email, phone}) => {
     return (
         <div className="general-info">
                 <form action="" onSubmit={handleSubmit}>
+
+                    <h1>General Information</h1>
 
                 <label htmlFor="name">
                     Name {' '}

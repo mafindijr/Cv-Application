@@ -40,8 +40,6 @@ export default function PracExperience () {
 
             <div>
 
-            <h1>Practical Experience</h1>
-
             <p>{company}</p>
             <p>{position}</p>
             <p>{jobDescription}</p>
@@ -56,6 +54,8 @@ export default function PracExperience () {
     return (
         <div className="prac-experience">
             <form onSubmit={handleSubmit}>
+
+                <h1>Practical Experience</h1>
 
                 <label>
                     Company Name {' '}
