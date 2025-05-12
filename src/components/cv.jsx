@@ -8,7 +8,7 @@ export default function CV() {
     return (
         <div className="cv">
 
-            <h1>CV</h1>
+            <h1>Write Up Your CV</h1>
 
             <GeneralInfor />
             <EduExperience />
