@@ -1,16 +1,16 @@
 import { useState } from "react";
-import GeneralInfor from "./general-info";
+import Preview from "./general-info";
 import EduExperience from "./edu-experience";
 import PracExperience from "./prac-experience"
 
 export default function CV() {
-    const [generalInfo, setGeneralInfo] = useState({ name: "", email: "", phone: "" });
+   // const [generalInfo, setGeneralInfo] = useState({ name: "", email: "", phone: "" });
     const [eduExperience, setEduExperience] = useState({ school: "", levelOfStudy: "", dateOfStudy: "" });
     const [pracExperience, setPracExperience] = useState({ compnay: '', jobTitle: '', dateOfWork: '', description: '' });
 
-    const handleGeneralInfoChange = (info) => {
-        setGeneralInfo(info);
-    };
+    // const handleGeneralInfoChange = (info) => {
+    //     setGeneralInfo(info);
+    // };
 
     const handleEduExperienceChange = (info) => {
         setEduExperience(info);
@@ -23,19 +23,19 @@ export default function CV() {
     return (
         <div className="cv">
             <h1>CV</h1>
-            <GeneralInfor onChange={handleGeneralInfoChange} />
             <EduExperience onChange={handleEduExperienceChange}/>
             <PracExperience onChange={handlePracExperience} />
             
+            <Preview />
             
-            <div>
+            {/* <div>
                     <h1>Review</h1>
 
                 <h2>General Information</h2>
                 <p>Name: {generalInfo.name}</p>
                 <p>Email: {generalInfo.email}</p>
                 <p>Phone: {generalInfo.phone}</p>
-            </div>
+            </div> */}
 
             <div>
                 <h2>Education Experience</h2>
