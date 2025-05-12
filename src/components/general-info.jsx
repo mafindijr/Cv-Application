@@ -103,17 +103,3 @@ const InforData = ({name, email, phone}) => {
     );  
 
 }
-
-
-const Preview = () => {
-
-    return (
-        <div className="grid-gen-info">
-            <h2>Preview</h2>
-
-            <p>{name}</p>
-            <p>{email}</p>
-            <p>{phone}</p>
-        </div>
-    );
-}
