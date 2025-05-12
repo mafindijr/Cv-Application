@@ -11,8 +11,13 @@ export default function PracExperience ({ onChange }) {
         onChange(updatedInfo);
     }
 
+    function handleSubmit (e) {
+        e.preventDefault();
+    }
+
     return (
         <div className='prac-experience'>
+            <form action="" onSubmit={handleSubmit}>
 
             <label htmlFor="company">
                 company name {' '}
@@ -58,6 +63,7 @@ export default function PracExperience ({ onChange }) {
                     onChange={handleChange}
                 />
             </label>
+            </form>
 
         </div>
     );

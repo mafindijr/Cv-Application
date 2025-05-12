@@ -11,9 +11,14 @@ export default function EduExperience ( {onChange} ) {
         onChange(updateSchoolInfor); 
     }
 
+     function handleSubmit (e) {
+        e.preventDefault();
+     }
+
     return (
 
         <div className="edu-experience">
+            <form action="" onSubmit={handleSubmit}>
 
             <h1>Education Experience</h1>
 
@@ -55,6 +60,7 @@ export default function EduExperience ( {onChange} ) {
                     onChange={handleSchoolChange}
                 />
             </label>
+            </form>
 
         </div>
     );

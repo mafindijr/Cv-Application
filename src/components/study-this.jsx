@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 export default function FeedbackForm() {
+  
   const [text, setText] = useState('');
   const [status, setStatus] = useState('typing');
 
@@ -19,7 +20,9 @@ export default function FeedbackForm() {
   }
 
   return (
+
     <form onSubmit={handleSubmit}>
+
       <p>How was your stay at The Prancing Pony?</p>
       <textarea
         disabled={isSending}
@@ -34,7 +37,9 @@ export default function FeedbackForm() {
         Send
       </button>
       {isSending && <p>Sending...</p>}
+
     </form>
+
   );
 }
 
