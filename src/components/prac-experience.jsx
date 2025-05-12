@@ -1,71 +1,120 @@
 import { useState } from 'react';
 
-export default function PracExperience ({ onChange }) {
 
-    const [PracExperience, setPracExperience] = useState({ compnay: '', jobTitle: '', dateOfWork: '', description: '' });
+export default function PracExperience () {
+
+    const [company, setComany] = useState('');
+    const [position, setPosition] = useState('');
+    const [jobDescription, setJobDescription] = useState('');
+    const [year, setYear] = useState('');
 
     function handleChange (e) {
-        const { name, value } = e.target;
-        const updatedInfo = { ...PracExperience, [name]: value }
-        setPracExperience(updatedInfo);
-        onChange(updatedInfo);
+
+        const { name, value} = e.target;
+
+        if(name === 'company') {
+            setComany(e.target.value);
+        }
+
+        if(name === 'position') {
+            setPosition(e.target.value);
+        }
+
+        if(name === 'job-description') {
+            setJobDescription(e.target.value);
+        }
+
+        if(name === 'year') {
+            setYear(e.target);
+        }
     }
 
-    function handleSubmit (e) {
+    const handleSubmit = () => {
         e.preventDefault();
     }
 
+
+    // A nested component to get the input values
+    const PracData = ({company, position, jobDescription, year}) => {
+        return (
+
+            <div>
+
+            <h1>Practical Experience</h1>
+
+            <p>{company}</p>
+            <p>{position}</p>
+            <p>{jobDescription}</p>
+            <p>{year}</p>
+
+
+            </div>
+        );
+    }
+
+
     return (
-        <div className='prac-experience'>
-            <form action="" onSubmit={handleSubmit}>
+        <div className="prac-experience">
+            <form onSubmit={handleSubmit}>
 
-            <label htmlFor="company">
-                company name {' '}
+                <label>
+                    Company Name {' '}
 
-                <input type="text"
+                    <input 
+                    
+                    type="text"
+                    placeholder='company work before'
                     name='company'
-                    placeholder='company name'
-                    value={PracExperience.compnay}
-                    onChange={handleChange}
-                />
-            </label>
+                    value={company}
+                    onChange={handleChange} 
+                    
+                    />
+                </label>
 
-            <label htmlFor="j0b">
-                job title {' '}
+                <label>
+                    Position {' '}
 
-                <input type="text"
-                    name='job'
-                    placeholder='job title'
-                    value={PracExperience.jobTitle}
-                    onChange={handleChange}
-                />
-            </label>
+                    <input 
+                    
+                    type="text"
+                    placeholder='Position'
+                    name='position'
+                    value={position}
+                    onChange={handleChange} 
+                    
+                    />
+                </label>
 
+                <label>
+                    Description {' '}
 
-            <label htmlFor="date">
-                Date of work {' '}
+                    <input 
+                    
+                    type="text"
+                    placeholder='Role description'
+                    name='job-description'
+                    value={jobDescription}
+                    onChange={handleChange} 
+                    
+                    />
+                </label>
 
-                <input type="text"
-                    name='date'
-                    placeholder='enter date'
-                    value={PracExperience.dateOfWork}
-                    onChange={handleChange}
-                />
-            </label>
+                <label>
+                    Date {' '}
 
-            <label htmlFor="description">
-                Description {' '}
-
-                <input type="text"
-                    name='description'
-                    placeholder='description'
-                    value={PracExperience.description}
-                    onChange={handleChange}
-                />
-            </label>
+                    <input 
+                    
+                    type="text"
+                    placeholder='company work before'
+                    name='year'
+                    value={year}
+                    onChange={handleChange} 
+                    
+                    />
+                </label>
             </form>
 
+            <PracData company={company} position={position} jobDescription={jobDescription} year={year} />
         </div>
     );
-
 }

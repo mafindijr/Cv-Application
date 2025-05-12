@@ -1,70 +1,164 @@
+import React from 'react';
 import { useState } from 'react';
 
-export default function EduExperience ( {onChange} ) {
 
-    const [schoolInfor, setSchoolInfor] = useState({ school: "", levelOfStudy: "", dateOfStudy: "" });
+export default function EduExperience () {
+    const [school, setSchool] = useState("");
+    const [course, setCourse] = useState("");
+    const [date, setDate] = useState("");
+
     
-    const handleSchoolChange = (e) => {
+    function handleChange(e) {
+
         const { name, value } = e.target;
-        const updateSchoolInfor = { ...schoolInfor, [name]: value};
-        setSchoolInfor(updateSchoolInfor);
-        onChange(updateSchoolInfor); 
+
+        if (name === "school") {
+            setSchool(e.target.value);
+        }
+
+        if (name === "course") {
+            setCourse(e.target.value);
+        }
+        if (name === "date") {
+            setDate(e.target.value);
+        }
+
     }
 
-     function handleSubmit (e) {
+    function handleSubmit(e) {
         e.preventDefault();
-     }
+    }
+
+
+    const EduData = ({ school, course, date }) => {
+        return (
+            <div>
+                <h1>Education Experience</h1>
+                <p>{school}</p>
+                <p>{course}</p>
+                <p>{date}</p>
+            </div>
+        )
+    }
 
     return (
-
         <div className="edu-experience">
-            <form action="" onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
 
-            <h1>Education Experience</h1>
+            <label>
+                School Name: {' '}
 
-            <label htmlFor="school-name">
-
-                School Name {" "}
-
-                <input
-                    type="text"
-                    name="school"
-                    placeholder="school name"
-                    value={schoolInfor.school}
-                    onChange={handleSchoolChange}
+                <input 
+                type="text"
+                name='school'
+                placeholder='enter school'
+                value={school}
+                onChange={handleChange}
                 />
             </label>
 
-            <label htmlFor="level">
+            <label>
+                Course of Study: {' '}
 
-                Leve of study {" "}
-
-                <input
-                    type="text"
-                    name="level of study"
-                    placeholder="level of study"
-                    value={schoolInfor.levelOfStudy}
-                    onChange={handleSchoolChange}
+                <input 
+                type="text"
+                name='course'
+                placeholder='enter course'
+                value={course}
+                onChange={handleChange}
                 />
             </label>
 
-            <label htmlFor="date">
+            <label>
+                Date of Study: {' '}
 
-                Date {" "}
-
-                <input
-                    type="text"
-                    name="Date"
-                    placeholder="Date"
-                    value={schoolInfor.dateOfStudy}
-                    onChange={handleSchoolChange}
+                <input 
+                type="text"
+                name='date'
+                placeholder='enter year of study'
+                value={date}
+                onChange={handleChange}
                 />
             </label>
+
             </form>
 
+            <EduData school={school} course={course} date={date} />
         </div>
     );
+}
+
+
+
+
+//other textfields state isnt changing
+// import { useState } from 'react';
+
+// export default function EduExperience ( {onChange} ) {
+
+//     const [schoolInfor, setSchoolInfor] = useState({ school: "", levelOfStudy: "", dateOfStudy: "" });
+    
+//     const handleSchoolChange = (e) => {
+//         const { name, value } = e.target;
+//         const updateSchoolInfor = { ...schoolInfor, [name]: value};
+//         setSchoolInfor(updateSchoolInfor);
+//         onChange(updateSchoolInfor); 
+//     }
+
+//      function handleSubmit (e) {
+//         e.preventDefault();
+//      }
+
+//     return (
+
+//         <div className="edu-experience">
+//             <form action="" onSubmit={handleSubmit}>
+
+//             <h1>Education Experience</h1>
+
+//             <label htmlFor="school-name">
+
+//                 School Name {" "}
+
+//                 <input
+//                     type="text"
+//                     name="school"
+//                     placeholder="school name"
+//                     value={schoolInfor.school}
+//                     onChange={handleSchoolChange}
+//                 />
+//             </label>
+
+//             <label htmlFor="level">
+
+//                 Leve of study {" "}
+
+//                 <input
+//                     type="text"
+//                     name="level of study"
+//                     placeholder="level of study"
+//                     value={schoolInfor.levelOfStudy}
+//                     onChange={handleSchoolChange}
+//                 />
+//             </label>
+
+//             <label htmlFor="date">
+
+//                 Date {" "}
+
+//                 <input
+//                     type="text"
+//                     name="Date"
+//                     placeholder="Date"
+//                     value={schoolInfor.dateOfStudy}
+//                     onChange={handleSchoolChange}
+//                 />
+//             </label>
+//             </form>
+
+//         </div>
+//     );
 
 
     
-}
+// }
