@@ -113,7 +113,7 @@ export default function PracExperience () {
                     />
                 </label>
 
-                <button type='submit'>Add details</button>
+                <button type='submit'>submit details</button>
 
             </form>
 

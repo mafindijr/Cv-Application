@@ -82,7 +82,7 @@ export default function EduExperience () {
                 />
             </label>
 
-            <button type='submit'>Add details</button>
+            <button type='submit'>Submit details</button>
 
             </form>
 
