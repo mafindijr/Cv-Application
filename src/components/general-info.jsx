@@ -96,6 +96,8 @@ const InforData = ({name, email, phone}) => {
                     />
                 </label>
 
+                <button type="submit">Add details</button>
+
         </form>
 
         <InforData name={name} email={email} phone={phone} />
