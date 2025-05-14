@@ -82,6 +82,8 @@ export default function EduExperience () {
                 />
             </label>
 
+            <button type='submit'>Add details</button>
+
             </form>
 
             <EduData school={school} course={course} date={date} />
