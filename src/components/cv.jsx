@@ -14,13 +14,6 @@ export default function CV() {
             <EduExperience />
             <PracExperience />
             
-
-            {/* <div>
-                <h2>Education Experience</h2>
-                <p>School: {eduExperience.school}</p>
-                <p>Level of Study: {eduExperience.levelOfStudy}</p>
-                <p>Date of Study: {eduExperience.dateOfStudy}</p>
-            </div> */}
         </div>
     );
 }
