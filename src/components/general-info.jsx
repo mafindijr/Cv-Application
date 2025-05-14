@@ -49,9 +49,9 @@ const InforData = ({name, email, phone}) => {
     return (
         <div>
 
-        <p>{name}</p>
-        <p>{email}</p>
-        <p>{phone}</p>
+        <p>Name: {name}</p>
+        <p>Email: {email}</p>
+        <p>Contact {phone}</p>
 
 
         </div>

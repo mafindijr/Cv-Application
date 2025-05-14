@@ -33,9 +33,9 @@ export default function EduExperience () {
     const EduData = ({ school, course, date }) => {
         return (
             <div>
-                <p>{school}</p>
-                <p>{course}</p>
-                <p>{date}</p>
+                <p>School: {school}</p>
+                <p>Course; {course}</p>
+                <p>year of admission {date}</p>
             </div>
         )
     }

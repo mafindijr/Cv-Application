@@ -40,10 +40,10 @@ export default function PracExperience () {
 
             <div>
 
-            <p>{company}</p>
-            <p>{position}</p>
-            <p>{jobDescription}</p>
-            <p>{year}</p>
+            <p>Company work before: {company}</p>
+            <p>Role: {position}</p>
+            <p>Job: {jobDescription}</p>
+            <p>Year: {year}</p>
 
 
             </div>
