@@ -112,6 +112,9 @@ export default function PracExperience () {
                     
                     />
                 </label>
+
+                <button type='submit'>Add details</button>
+
             </form>
 
             <PracData company={company} position={position} jobDescription={jobDescription} year={year} />
