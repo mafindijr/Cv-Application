@@ -11,8 +11,8 @@ export default function CV() {
     const handleSubmit = (e) => {
         e.preventDefault();
         // All data is available here
-        console.log({ generalInfo, eduExperience, pracExperience });
-        // You can keep the state or clear it here as needed
+       // console.log({ generalInfo, eduExperience, pracExperience });
+    
     };
 
     return (
