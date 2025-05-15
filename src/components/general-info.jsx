@@ -1,107 +1,41 @@
-import { useState } from "react";
 
 
-
-export default function GeneralInfor() {
-    
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [phone, setPhone] = useState("");
-
-    // const handleNameChange = (e) => {
-    //   setName(e.target.value);
-    // };
-
-    // const handleEmailChange = (e) => {
-    //     setEmail(e.target.value);
-    // }
-
-    // const handlePhoneChange = (e) => {
-    //     setPhone(e.target.value);
-    // }
-
-    function handleInputChange (e) {
-
+export default function GeneralInfor({ data, setData }) {
+    function handleChange(e) {
         const { name, value } = e.target;
-
-        if(name === "name") {
-            setName(e.target.value);
-        }
-
-        if(name === "email") {
-            setEmail(e.target.value);
-        }
-        if(name === "phone") {
-            setPhone(e.target.value);
-        }
+        setData(prev => ({ ...prev, [name]: value }));
     }
-
-    function handleSubmit (e) {
-        e.preventDefault();
-
-
-    }
-
-
-
-const InforData = ({name, email, phone}) => {  
-
-    return (
-        <div>
-
-        <p>Name: {name}</p>
-        <p>Email: {email}</p>
-        <p>Contact {phone}</p>
-
-
-        </div>
-        
-    );
-
-}
 
     return (
         <div className="general-info">
-                <form action="" onSubmit={handleSubmit}>
-
-                    <h1>General Information</h1>
-
-                <label htmlFor="name">
-                    Name {' '}
-                    <input type="text"
-                        name='name'
-                        placeholder='enter your name'
-                        value={name}
-                        onChange={handleInputChange}
-                    />
-                </label>
-
-                <label htmlFor="email">
-                    Email {' '}
-                    <input type="text"
-                        name='email'
-                        placeholder='enter your email'
-                        value={email}
-                        onChange={handleInputChange}
-                    />
-                </label>
-
-                <label htmlFor="phone">
-                    Phone {' '}
-                    <input type="text"
-                        name='phone'
-                        placeholder='enter your phone number'
-                        value={phone}
-                        onChange={handleInputChange}
-                    />
-                </label>
-
-                <button type="submit">Submit details</button>
-
-        </form>
-
-        <InforData name={name} email={email} phone={phone} />
-    </div>
-    );  
-
+            <h2>General Information</h2>
+            <label>
+                Name
+                <input
+                    type="text"
+                    name="name"
+                    value={data.name || ""}
+                    onChange={handleChange}
+                />
+            </label>
+            <label>
+                Email
+                <input
+                    type="email"
+                    name="email"
+                    value={data.email || ""}
+                    onChange={handleChange}
+                />
+            </label>
+            <label>
+                Phone
+                <input
+                    type="tel"
+                    name="phone"
+                    value={data.phone || ""}
+                    onChange={handleChange}
+                />
+            </label>
+        </div>
+    );
 }
