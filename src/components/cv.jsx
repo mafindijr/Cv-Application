@@ -8,31 +8,46 @@ export default function CV() {
     const [generalInfo, setGeneralInfo] = useState({});
     const [eduExperience, setEduExperience] = useState({});
     const [pracExperience, setPracExperience] = useState({});
+    const [isSubmited, setIsSubmited] = useState(false);
+    const [text, setText] = useState('Fill out the form below to create your CV.');
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setIsSubmited(true)
+        setText('Cv submited! Care to edit?');
         
     };
+
+    const handleEdit = () => {
+        setIsSubmited(false);
+        setText('Fill out the form below to create your CV.');
+    }
 
     return (
         <div className="cv-grid">
 
+            
           <div className="form-input-box">
 
              <div>
                 <h1>CV Builder</h1>
-                <p>Fill out the form below to create your CV.</p>
+                <p>{text}</p>
             </div>
+            {!isSubmited ? (
             
-
              <form onSubmit={handleSubmit}>
                 <GeneralInfor data={generalInfo} setData={setGeneralInfo} />
                 <EduExperience data={eduExperience} setData={setEduExperience} />
                 <PracExperience data={pracExperience} setData={setPracExperience} />
                 <center><button type="submit">Submit</button></center>
             </form>
+            ) : (
+            
+                <button onClick={handleEdit}>Edit</button>
+        
+          )}
 
-          </div>
+          </div> 
 
             <div className="pre-box">
                 <h1>Preview Data</h1>
