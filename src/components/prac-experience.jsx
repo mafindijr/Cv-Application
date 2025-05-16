@@ -1,4 +1,4 @@
-// do this for other components as well
+import "../Styles/prac-experience.css";
 
 export default function PracExperience({ data, setData }) {
     function handleChange(e) {

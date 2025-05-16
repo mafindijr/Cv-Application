@@ -1,0 +1,19 @@
+.cv-grid {
+    display: grid;
+    grid-template-columns: 500px 500px;
+    margin: 0px 50px;
+    box-shadow: 0px 1px 6px rgba(2, 2, 2, 0.15);
+}
+
+.pre-box {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(25, 66, 114, 0.333);
+    padding: 0px 50px;
+}
+
+.form-input-box {
+    background-color: rgb(64, 95, 95);
+    padding: 0px 50px;
+}
