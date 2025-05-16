@@ -2,6 +2,7 @@ import { useState } from "react";
 import GeneralInfor from "./general-info";
 import EduExperience from "./edu-experience";
 import PracExperience from "./prac-experience";
+import "../Styles/cv.css";
 
 export default function CV() {
     const [generalInfo, setGeneralInfo] = useState({});
@@ -10,31 +11,34 @@ export default function CV() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        const data = {generalInfo, eduExperience, pracExperience};
+        //console.log(data);
         // All data is available here
        // console.log({ generalInfo, eduExperience, pracExperience });
     
     };
 
     return (
-        <div className="cv">
+        <div className="cv-grid">
 
-            <div>
+          <div className="form-input-box">
 
-                <div>
+             <div>
                 <h1>CV Builder</h1>
                 <p>Fill out the form below to create your CV.</p>
             </div>
             
 
-                <form onSubmit={handleSubmit}>
+             <form onSubmit={handleSubmit}>
                 <GeneralInfor data={generalInfo} setData={setGeneralInfo} />
                 <EduExperience data={eduExperience} setData={setEduExperience} />
                 <PracExperience data={pracExperience} setData={setPracExperience} />
-                <button type="submit">Submit</button>
+                <center><button type="submit">Submit</button></center>
             </form>
-            </div>
 
-            <div>
+          </div>
+
+            <div className="pre-box">
                 <h1>Preview Data</h1>
 
                 <div>
