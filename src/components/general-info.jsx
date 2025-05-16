@@ -1,4 +1,4 @@
-
+import "../Styles/general-info.css";
 
 export default function GeneralInfor({ data, setData }) {
     function handleChange(e) {
