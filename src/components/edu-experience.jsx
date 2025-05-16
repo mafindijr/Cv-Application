@@ -1,4 +1,4 @@
-
+import "../Styles/edu-experience.css";
 
 export default function EduExperience({ data, setData }) {
     function handleChange(e) {
