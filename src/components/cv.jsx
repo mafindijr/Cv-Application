@@ -11,11 +11,7 @@ export default function CV() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const data = {generalInfo, eduExperience, pracExperience};
-        //console.log(data);
-        // All data is available here
-       // console.log({ generalInfo, eduExperience, pracExperience });
-    
+        
     };
 
     return (
