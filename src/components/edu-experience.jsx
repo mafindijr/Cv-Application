@@ -1,6 +1,7 @@
 import "../Styles/edu-experience.css";
 
 export default function EduExperience({ data, setData }) {
+    
     function handleChange(e) {
         const { name, value } = e.target;
         setData(prev => ({ ...prev, [name]: value }));
